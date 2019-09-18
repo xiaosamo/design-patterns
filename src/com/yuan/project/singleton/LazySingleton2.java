@@ -10,7 +10,6 @@ public class LazySingleton2 {
     private static LazySingleton2 singleton = null;
 
     private LazySingleton2(){
-
     }
 
     public synchronized static LazySingleton2 getSingleton(){

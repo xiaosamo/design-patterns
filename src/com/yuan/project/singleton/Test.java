@@ -1,6 +1,6 @@
 package com.yuan.project.singleton;
 
-import java.io.IOException;
+import java.io.*;
 import java.lang.reflect.InvocationTargetException;
 
 /**
@@ -11,18 +11,18 @@ import java.lang.reflect.InvocationTargetException;
 public class Test {
     public static void main(String[] args) throws IOException, ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
 
-//        HungrySingleton singleton = HungrySingleton.getHungrySingleton();
-//        ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("singleton_file"));
-//        oos.writeObject(singleton);
-//
-//        File file = new File("singleton_file");
-//        ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file));
-//
-//        HungrySingleton newInstance = (HungrySingleton) ois.readObject();
-//
-//        System.out.println(singleton);
-//        System.out.println(newInstance);
-//        System.out.println(singleton == newInstance);
+        HungrySingleton singleton = HungrySingleton.getInstance();
+        ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("singleton_file"));
+        oos.writeObject(singleton);
+
+        File file = new File("singleton_file");
+        ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file));
+
+        HungrySingleton newInstance = (HungrySingleton) ois.readObject();
+
+        System.out.println(singleton);
+        System.out.println(newInstance);
+        System.out.println(singleton == newInstance);
 
 
 //        Class clazz = HungrySingleton.class;

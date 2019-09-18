@@ -9,18 +9,12 @@ import java.io.Serializable;
  * 线程安全
  */
 public class HungrySingleton implements Serializable {
-    private final static HungrySingleton hungrySingleton = new HungrySingleton();
+    private final static HungrySingleton instance = new HungrySingleton();
     private HungrySingleton(){
-        if (hungrySingleton == null) {
-            throw new RuntimeException("单例模式禁止调用反射");
-        }
     }
 
-    public static HungrySingleton getHungrySingleton(){
-        return hungrySingleton;
+    public static HungrySingleton getInstance(){
+        return instance;
     }
 
-    private Object readResolve(){
-        return hungrySingleton;
-    }
 }
